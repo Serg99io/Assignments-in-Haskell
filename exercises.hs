@@ -42,3 +42,14 @@ infsup1 (x:xs) func
         | func x (infsup1 xs func) = x
         | otherwise = infsup1 xs func
 
+--ex 242 occurs
+
+--the function occurs will take a string S and list of strings as input
+-- and will output the remainder of the list after string S, and Nothing if it doesnt occur
+
+occurs :: String -> [String] -> (Maybe [String])
+occurs str [] = Nothing
+occurs str (x:xs)
+        | str == x = Just xs
+        | otherwise = occurs str xs
+               
