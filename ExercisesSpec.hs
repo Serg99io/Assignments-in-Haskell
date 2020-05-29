@@ -16,3 +16,105 @@ spec = do
          (alltrue [True,False,False]) `shouldBe` False
        it "all true" $ do
          (alltrue [True,True,True]) `shouldBe` True
+         
+    describe "alltrue" $ do
+       it "all false" $ do
+         (alltrue [False,False,False]) `shouldBe` False
+       it "one true" $ do
+         (alltrue [True,False,False]) `shouldBe` False
+       it "all true" $ do
+         (alltrue [True,True,True]) `shouldBe` True
+	
+    describe "alltrue" $ do
+       it "all false" $ do
+         (alltrue [False,False,False]) `shouldBe` False
+       it "one true" $ do
+         (alltrue [True,False,False]) `shouldBe` False
+       it "all true" $ do
+         (alltrue [True,True,True]) `shouldBe` True
+    
+    describe "alltrue" $ do
+       it "all false" $ do
+         (alltrue [False,False,False]) `shouldBe` False
+       it "one true" $ do
+         (alltrue [True,False,False]) `shouldBe` False
+       it "all true" $ do
+         (alltrue [True,True,True]) `shouldBe` True
+    describe "alltrue" $ do
+       it "all false" $ do
+         (alltrue [False,False,False]) `shouldBe` False
+       it "one true" $ do
+         (alltrue [True,False,False]) `shouldBe` False
+       it "all true" $ do
+         (alltrue [True,True,True]) `shouldBe` True
+         
+    describe "alltrue" $ do
+       it "all false" $ do
+         (alltrue [False,False,False]) `shouldBe` False
+       it "one true" $ do
+         (alltrue [True,False,False]) `shouldBe` False
+       it "all true" $ do
+         (alltrue [True,True,True]) `shouldBe` True
+	
+    describe "alltrue" $ do
+       it "all false" $ do
+         (alltrue [False,False,False]) `shouldBe` False
+       it "one true" $ do
+         (alltrue [True,False,False]) `shouldBe` False
+       it "all true" $ do
+         (alltrue [True,True,True]) `shouldBe` True
+    
+    describe "alltrue" $ do
+       it "all false" $ do
+         (alltrue [False,False,False]) `shouldBe` False
+       it "one true" $ do
+         (alltrue [True,False,False]) `shouldBe` False
+       it "all true" $ do
+         (alltrue [True,True,True]) `shouldBe` True
+    describe "alltrue" $ do
+       it "all false" $ do
+         (alltrue [False,False,False]) `shouldBe` False
+       it "one true" $ do
+         (alltrue [True,False,False]) `shouldBe` False
+       it "all true" $ do
+         (alltrue [True,True,True]) `shouldBe` True
+         
+    describe "alltrue" $ do
+       it "all false" $ do
+         (alltrue [False,False,False]) `shouldBe` False
+       it "one true" $ do
+         (alltrue [True,False,False]) `shouldBe` False
+       it "all true" $ do
+         (alltrue [True,True,True]) `shouldBe` True
+	
+    describe "alltrue" $ do
+       it "all false" $ do
+         (alltrue [False,False,False]) `shouldBe` False
+       it "one true" $ do
+         (alltrue [True,False,False]) `shouldBe` False
+       it "all true" $ do
+         (alltrue [True,True,True]) `shouldBe` True
+    
+    describe "alltrue" $ do
+       it "all false" $ do
+         (alltrue [False,False,False]) `shouldBe` False
+       it "one true" $ do
+         (alltrue [True,False,False]) `shouldBe` False
+       it "all true" $ do
+         (alltrue [True,True,True]) `shouldBe` True
+         
+    describe "alltrue" $ do
+       it "all false" $ do
+         (alltrue [False,False,False]) `shouldBe` False
+       it "one true" $ do
+         (alltrue [True,False,False]) `shouldBe` False
+       it "all true" $ do
+         (alltrue [True,True,True]) `shouldBe` True
+    
+    describe "alltrue" $ do
+       it "all false" $ do
+         (alltrue [False,False,False]) `shouldBe` False
+       it "one true" $ do
+         (alltrue [True,False,False]) `shouldBe` False
+       it "all true" $ do
+         (alltrue [True,True,True]) `shouldBe` True
