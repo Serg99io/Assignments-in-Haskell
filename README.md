@@ -1,4 +1,4 @@
-In this directory you will find the haskell exercises in exercises.hs . All the functions have been commented with some explanation what each function does. If you want to run the tests use the command "cabal test" on the command line.
+In this directory you will find the haskell exercises in Exercises.hs . All the functions have been commented with some explanation what each function does. If you want to run the tests use the command "cabal test" on the command line.
 
 
 
