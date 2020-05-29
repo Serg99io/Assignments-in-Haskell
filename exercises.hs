@@ -1,6 +1,7 @@
-import Data.List
-import System.IO
+module Exercises where
 
+
+import Data.List
 
 --ex 138 sum-list
 
@@ -53,3 +54,93 @@ occurs str (x:xs)
         | str == x = Just xs
         | otherwise = occurs str xs
                
+
+--ex 250 tabulate
+
+-- the function takes a function and number x as input and tabulates the function between x
+-- and 0 in a list, The output will be a list
+
+tabulate :: (Num a, Eq a) => (a -> a) -> a -> [a]
+tabulate func x
+        | x == 0 = [func 0] 
+        | otherwise = [func x] ++ tabulate func (x-1)        
+
+
+--ex 251 fold1
+-- the function fold1 takes as input a list of numbers and a function (sum or product) 
+-- and will compute the function of the numbers in the list
+
+fold1 :: (Num a, Eq a) => [a] -> (a -> a -> a) -> a
+fold1 [] func = 0
+fold1 (x:xs) func
+       | xs == [] = x
+       | otherwise = func x (fold1 xs func)
+
+--ex 271 findname
+--The function ormap' is used in this function (the last function in this file)
+--The function findname consumes a name and a list of names
+-- and outputs whether any of the names on the list are equal or an extension of the given name
+--isPrefixOf checks whether one is a prefix of the other (part of Data.List)
+
+findname :: String -> [String] -> Bool
+findname inpstr [] = False
+findname inpstr xs = ormap' func xs
+        where func z = isPrefixOf inpstr z
+      
+
+
+--Figure 95
+
+--The function build-list consumes a function (like * 5) and a number
+--and it will construct a list by applying the function to all numbers between 0 and n (n incl.)
+
+buildlist :: (Num a,Eq a) => a -> (a -> a) -> [a]
+buildlist n func
+        | n == 0 = [func n]
+        | otherwise = buildlist (n-1) func ++ [func n]
+
+
+--The function filter' consumes a list and a condition
+-- and will output a list with all the items in inputlist for which the condition holds
+
+filter' :: (a -> Bool) -> [a] -> [a]
+filter' _ [] = []
+filter' func (x:xs)
+         | func x = [x] ++ (filter' func xs)
+         | otherwise = filter' func xs
+
+--The function sort' will consume a list and a comparison
+-- and will produce the sorted list accoridng to the comparison
+
+sort' :: Ord a => [a] -> (a ->a-> Bool) -> [a]
+sort' [] _ = []
+sort' (x:xs) func = (helpins x (sort' xs func) func)
+
+--The helpins helps the sort function insert the inputs correctly
+
+helpins :: (Ord a) => a -> [a] -> (a -> a -> Bool) -> [a]
+helpins  x [] _  = [x]
+helpins x (z:zs) fun
+       | fun x z = [z] ++ helpins x zs fun
+       | otherwise = [x] ++ (z:zs)
+
+--The function map' will consume a list and a function
+-- it will output a list by applying the function to eac item of the input list
+
+map' :: (a -> b) -> [a] -> [b]
+map' _ [] = []
+map' func (x:xs) = [func x] ++ map' func xs
+
+--The function andmap' will consume a list and a condition
+-- the output will be True/False depending on if the condtion holds for every items in the list
+
+andmap' :: (a -> Bool) -> [a] -> Bool
+andmap' _ [] = True
+andmap' func (x:xs) = func x && (andmap' func xs)
+
+--The function ormap' will consume a list and a condition
+--the output will be True/False depending on if the condition holds for at least one item in list
+
+ormap' :: (a->Bool) -> [a] -> Bool
+ormap' _[] = False
+ormap' func (x:xs) = func x || (ormap' func xs)
